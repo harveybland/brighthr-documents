@@ -6,5 +6,9 @@ export default async function Home() {
   const documents: Item[] = await jsonData();
   console.log(documents);
 
-  return <main>Hello World</main>;
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  );
 }

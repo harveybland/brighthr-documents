@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <main>
+        <body className={poppins.className}>{children}</body>
+      </main>
     </html>
   );
 }
