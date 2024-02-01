@@ -1,9 +1,30 @@
+import React from "react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import Document from "../Document";
+import { File } from "../../../../types/types";
 
-describe("placeholder test", () => {
-  it("true to be true", () => {
-    expect(true).toBe(true);
+describe("Document Component", () => {
+  // Mock file data
+  const mockFile: File = {
+    type: "pdf",
+    name: "Employee Handbook",
+    added: "2017-01-06",
+  };
+
+  it("renders Document component with file details", () => {
+    render(
+      <Document
+        type={mockFile.type}
+        name={mockFile.name}
+        added={mockFile.added}
+      />
+    );
+
+    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
+      mockFile.name
+    );
+    expect(screen.getByText(`Added: ${mockFile.added}`)).toBeInTheDocument();
+    expect(screen.getByText(`Type: ${mockFile.type}`)).toBeInTheDocument();
   });
 });
-
-export {};
