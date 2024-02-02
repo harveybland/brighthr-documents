@@ -22,6 +22,7 @@
 ### Testing
 
 - Vitest is used in combination with React Testing Library for unit testing.
+- The tests are placed in the **tests** folder.
 - To test the components: pnpm run test
 
 ## Improvements / Added Notes

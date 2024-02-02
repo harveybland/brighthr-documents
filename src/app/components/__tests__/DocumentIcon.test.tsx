@@ -5,7 +5,7 @@ import DocumentIcon from "../DocumentIcon";
 import { DocumentType } from "../../../../types/types";
 
 describe("Document Component", () => {
-  // Mock file data
+  // Mock data
   const mockType: DocumentType = {
     type: "pdf",
   };

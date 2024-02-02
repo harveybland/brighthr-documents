@@ -5,7 +5,7 @@ import Modal from "../Modal";
 import { File } from "../../../../types/types";
 
 describe("Modal Component", () => {
-  // Mock file data
+  // Mock data
   const mockFiles: File[] = [
     {
       name: "Document 1",

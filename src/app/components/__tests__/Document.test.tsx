@@ -5,7 +5,7 @@ import Document from "../Document";
 import { DocumentItem } from "../../../../types/types";
 
 describe("Document Component", () => {
-  // Mock file data
+  // Mock data
   const mockFile: DocumentItem = {
     type: "pdf",
     name: "Employee Handbook",

@@ -47,9 +47,9 @@ export default function Home() {
     switch (sortBy) {
       case "date":
         sorted.sort((a: DocumentItem, b: DocumentItem) => {
-          const dateA = a.added && new Date(a.added);
-          const dateB = b.added && new Date(b.added);
-          return dateA - dateB;
+          const dateA = a.added ? new Date(a.added) : null;
+          const dateB = b.added ? new Date(b.added) : null;
+          return (dateA?.getTime() || 0) - (dateB?.getTime() || 0);
         });
         break;
       case "type":

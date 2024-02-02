@@ -18,7 +18,7 @@ export default function OptionBar({
         <Image src={searchIcon} alt="Search Icon" width={20} height={20} />
         <input
           type="text"
-          className="bg-backgroundMain w-full py-2 px-4 text-textMain rounded-md"
+          className="bg-backgroundMain w-full py-2 px-4 text-textMain rounded-lg"
           placeholder="Search Document"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
