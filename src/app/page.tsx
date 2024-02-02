@@ -8,11 +8,11 @@ export default async function Home() {
 
   return (
     <div className="bg-white px-4 ">
-      <h1 className="relative text-2xl rounded-t py-4">Documents</h1>
+      <h1 className="relative text-2xl rounded-t py-5">Documents</h1>
       <p className="pb-3">{documents.length} documents</p>
       <div className="pb-4 rounded rounded-tl-none">
-        <div className="grid-style bg-backgroundMain px-4 rounded-t py-2">
-          <p>Name</p>
+        <div className="grid-style bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
+          <p>Document Name</p>
           <p>Date</p>
           <p>Type</p>
           <p>Status</p>

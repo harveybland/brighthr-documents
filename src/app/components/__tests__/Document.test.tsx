@@ -24,7 +24,7 @@ describe("Document Component", () => {
     expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
       mockFile.name
     );
-    expect(screen.getByText(`Added: ${mockFile.added}`)).toBeInTheDocument();
-    expect(screen.getByText(`Type: ${mockFile.type}`)).toBeInTheDocument();
+    expect(screen.getByText(`${mockFile.added}`)).toBeInTheDocument();
+    expect(screen.getByText(`${mockFile.type}`)).toBeInTheDocument();
   });
 });

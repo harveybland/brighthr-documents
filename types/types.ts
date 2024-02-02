@@ -11,3 +11,7 @@ export interface Folder {
 }
 
 export type Item = File | Folder;
+
+export interface Type {
+    type: string
+}
