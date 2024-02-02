@@ -22,7 +22,7 @@ export default function Document({ type, name, added, files }: DocumentItem) {
     <>
       <button
         type="button"
-        className={`grid-container border border-backgroundMain text-start w-full rounded py-4 px-4 ${
+        className={`grid-container border border-borderMain text-start w-full rounded py-4 px-4 ${
           type !== "folder" && "cursor-default"
         } `}
         onClick={handleFolderClick}
