@@ -26,6 +26,6 @@ body {
 
 /* grid */
 .grid-style {
-  @apply grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,1fr,1fr,1fr] gap-2;
+  @apply grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,1fr,1fr,100px] gap-2;
 }
 

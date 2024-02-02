@@ -11,7 +11,7 @@ export default async function Home() {
       <h1 className="relative text-2xl rounded-t py-4">Documents</h1>
       <p className="pb-3">{documents.length} documents</p>
       <div className="pb-4 rounded rounded-tl-none">
-        <div className="grid-style bg-[#f6f6f6] px-4 rounded-t py-2">
+        <div className="grid-style bg-backgroundMain px-4 rounded-t py-2">
           <p>Name</p>
           <p>Date</p>
           <p>Type</p>
