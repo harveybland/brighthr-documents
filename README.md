@@ -30,3 +30,5 @@
 - Considered using queryParams to show the modal on the server side
 - Refactor the sort function to be reusable function for components.
 - Document animations breaking modal: I would change how the modal is working. Commented out the animation code for now.
+- Add active on sort by buttons
+- Add an overlay on the modals
