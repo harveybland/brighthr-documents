@@ -4,9 +4,14 @@ import { useEffect, useState } from "react";
 import { DocumentItem } from "../../types/types";
 import { jsonData } from "./api/json";
 import Document from "./components/Document";
+import OptionBar from "./components/OptionBar";
 
 export default function Home() {
   const [documents, setDocuments] = useState<DocumentItem[]>([]);
+  const [filteredDocuments, setFilteredDocuments] = useState<DocumentItem[]>(
+    []
+  );
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,19 +27,32 @@ export default function Home() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    // Filter documents based on document name
+    const filtered = documents.filter((document) => {
+      const nameMatches = document.name
+        ?.toLowerCase()
+        .includes(searchTerm.toLowerCase());
+      return nameMatches;
+    });
+
+    setFilteredDocuments(filtered);
+  }, [searchTerm, documents]);
+
   return (
     <div className="bg-white px-4">
       <h1 className="relative text-2xl rounded-t py-5">Documents</h1>
-      <p className="pb-3">{documents.length} documents</p>
+      <OptionBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <p className="py-4">{documents.length} documents</p>
       <div className="pb-4 rounded rounded-tl-none">
-        <div className="grid-container bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
-          <p className="grid-col-stretch">Document Name</p>
-          <p>Date</p>
-          <p>Type</p>
-          <p>Status</p>
-        </div>
         <div className="flex flex-col gap-4">
-          {documents.map((document) => (
+          <div className="grid-container bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
+            <p className="grid-col-stretch">Document Name</p>
+            <p>Date</p>
+            <p>Type</p>
+            <p>Status</p>
+          </div>
+          {filteredDocuments.map((document) => (
             <div key={document.name}>
               <Document
                 type={document.type}

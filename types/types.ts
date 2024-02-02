@@ -20,6 +20,11 @@ export interface DocumentType {
 
 // Modal props interface
 export interface ModalProps {
-    closeModal: () => void;
     files: File[];
+    closeModal?: () => void;
+}
+
+export interface OptionBarProps {
+    searchTerm: string;
+    setSearchTerm: (option: string) => void;
 }
