@@ -29,9 +29,9 @@ export default function Modal({ files, closeModal }: ModalProps) {
 
     switch (sortBy) {
       case "date":
-        sorted.sort((a: any, b: any) => {
-          const dateA = new Date(a.added);
-          const dateB = new Date(b.added);
+        sorted.sort((a: File, b: File) => {
+          const dateA = a.added && new Date(a.added);
+          const dateB = b.added && new Date(b.added);
           return dateA - dateB;
         });
         break;

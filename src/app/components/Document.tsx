@@ -28,11 +28,6 @@ export default function Document({ type, name, added, files }: DocumentItem) {
         onClick={handleFolderClick}
       >
         <DocumentInfo type={type} name={name} added={added ? added : ""} />
-        <div className="flex items-start">
-          <p className="bg-backgroundMain py-1 px-3 rounded-xl text-green-600 text-sm">
-            Active
-          </p>
-        </div>
       </button>
       {isModalOpen && files && <Modal files={files} closeModal={closeModal} />}
     </>

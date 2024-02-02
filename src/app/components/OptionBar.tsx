@@ -13,7 +13,7 @@ export default function OptionBar({
   };
 
   return (
-    <div className="flex items-center justify-between gap-4">
+    <div className="flex items-center justify-between flex-col sm:flex-row gap-4">
       <label className="flex items-center w-full bg-backgroundMain rounded-md pl-3">
         <Image src={searchIcon} alt="Search Icon" width={20} height={20} />
         <input

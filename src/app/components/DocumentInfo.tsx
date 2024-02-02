@@ -10,6 +10,11 @@ export default function DocumentInfo({ type, name, added }: File) {
       </div>
       <p>{added ? added : ""}</p>
       <p>{type}</p>
+      <div className="flex items-start">
+        <p className="bg-backgroundMain py-1 px-3 rounded-xl text-green-600 text-sm">
+          Active
+        </p>
+      </div>
     </>
   );
 }
