@@ -20,6 +20,7 @@ describe("DocumentInfo Component", () => {
       />
     );
 
+    // Check if the file details are rendered
     expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
       mockFile.name
     );
