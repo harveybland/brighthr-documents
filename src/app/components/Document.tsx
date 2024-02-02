@@ -19,7 +19,7 @@ export default function Document({ type, name, added, files }: DocumentItem) {
   };
 
   return (
-    <div>
+    <>
       <button
         type="button"
         className={`grid-container text-start w-full rounded py-4 px-4 ${
@@ -29,7 +29,11 @@ export default function Document({ type, name, added, files }: DocumentItem) {
       >
         <DocumentInfo type={type} name={name} added={added ? added : ""} />
       </button>
-      {isModalOpen && files && <Modal files={files} closeModal={closeModal} />}
-    </div>
+      <div>
+        {isModalOpen && files && (
+          <Modal files={files} closeModal={closeModal} />
+        )}
+      </div>
+    </>
   );
 }

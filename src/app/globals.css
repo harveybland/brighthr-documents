@@ -31,30 +31,32 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   background-color: #fff;
   padding: 30px 20px;
   border: 1px solid #f6f6f6;
   border-radius: 6px;
   width: 100%;
   max-width: 600px;
-  animation: fadeIn 0.3s ease-in-out forwards;
+  animation: fadeUp 0.3s ease-in-out forwards;
 }
 
 /* modal animation */
-@keyframes fadeIn {
+@keyframes fadeUp {
   from {
     opacity: 0;
+    transform: translate(-50%, -70px); 
   }
   to {
     opacity: 1;
+    transform: translate(-50%, -120px);
   }
 }
 
 /* document component animation */
-.animate-pop-in > * {
-  transform-origin: center;
-  opacity: 0;
+/* .animate-pop-in > * {
+  animation: 0.4s ease-out 0.05s 1 pop-in;
+  animation-fill-mode: forwards;
 }
 
 @keyframes pop-in {
@@ -69,9 +71,4 @@ body {
       transform: scale(1);
       opacity: 1;
   }
-}
-
-.animate-pop-in > * {
-  animation: 0.4s ease-out 0.05s 1 pop-in;
-  animation-fill-mode: forwards;
-}
+} */

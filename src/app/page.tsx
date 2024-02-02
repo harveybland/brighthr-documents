@@ -75,7 +75,7 @@ export default function Home() {
       <div className="rounded rounded-tl-none">
         <div className="flex flex-col gap-4">
           <DocumentHeader modalHeader={false} />
-          <div className="space-y-4 animate-pop-in">
+          <div className="space-y-4">
             {filteredDocuments.map((document) => (
               <div key={document.name}>
                 <Document
@@ -87,6 +87,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+          {filteredDocuments.length === 0 && (
+            <p className="text-center">No documents found</p>
+          )}
         </div>
       </div>
     </div>

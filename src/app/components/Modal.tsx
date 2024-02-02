@@ -65,6 +65,9 @@ export default function Modal({ files, closeModal }: ModalProps) {
           <DocumentInfo type={file.type} name={file.name} added={file.added} />
         </div>
       ))}
+      {filteredFiles.length === 0 && (
+        <p className="text-center">No documents found</p>
+      )}
     </div>
   );
 }
