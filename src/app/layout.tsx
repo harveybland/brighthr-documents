@@ -20,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <main>
-        <body className={poppins.className}>{children}</body>
-      </main>
+      <body className={poppins.className}>
+        <main className="max-w-screen-xl m-auto py-10 px-5">{children}</main>
+      </body>
     </html>
   );
 }
