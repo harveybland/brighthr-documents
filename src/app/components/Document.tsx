@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DocumentItem } from "../../../types/types";
-import DocumentIcon from "./DocumentIcon";
 import Modal from "./Modal";
+import DocumentInfo from "./DocumentInfo";
 
 export default function Document({ type, name, added, files }: DocumentItem) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,12 +20,7 @@ export default function Document({ type, name, added, files }: DocumentItem) {
       } `}
       onClick={handleFolderClick}
     >
-      <div className="flex items-center gap-3 grid-col-stretch">
-        <DocumentIcon type={type} />
-        <h2>{name}</h2>
-      </div>
-      <p>{added ? added : ""}</p>
-      <p>{type}</p>
+      <DocumentInfo type={type} name={name} added={added ? added : ""} />
       <div className="flex items-start">
         <p className="bg-backgroundMain py-1 px-3 rounded-xl text-green-600 text-sm">
           Active
