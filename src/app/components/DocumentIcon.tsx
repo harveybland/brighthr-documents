@@ -10,15 +10,45 @@ export default function DocumentIcon({ type }: DocumentType) {
   return (
     <div>
       {type === "pdf" ? (
-        <Image src={pdfIcon} alt="PDF svg" width={30} height={30} />
+        <Image
+          src={pdfIcon}
+          alt="PDF icon"
+          className="min-w-[30px]"
+          width={30}
+          height={30}
+        />
       ) : type === "csv" ? (
-        <Image src={csvIcon} alt="CSV svg" width={36} height={36} />
+        <Image
+          src={csvIcon}
+          alt="CSV icon"
+          className="min-w-[36px]"
+          width={36}
+          height={36}
+        />
       ) : type === "folder" ? (
-        <Image src={folderIcon} alt="Folder svg" width={30} height={30} />
+        <Image
+          src={folderIcon}
+          alt="Folder icon"
+          className="min-w-[30px]"
+          width={30}
+          height={30}
+        />
       ) : type === "doc" ? (
-        <Image src={docIcon} alt="DOC svg" width={30} height={30} />
+        <Image
+          src={docIcon}
+          alt="DOC icon"
+          className="min-w-[35px]"
+          width={35}
+          height={35}
+        />
       ) : (
-        <Image src={movIcon} alt="PDF svg" width={30} height={30} />
+        <Image
+          src={movIcon}
+          alt="PDF icon"
+          className="min-w-[30px]"
+          width={30}
+          height={30}
+        />
       )}
     </div>
   );

@@ -45,7 +45,7 @@ export default function Modal({ files, closeModal }: ModalProps) {
   };
 
   return (
-    <div className="modal-container">
+    <div className="modal-container shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] space-y-4">
       <OptionBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -53,13 +53,19 @@ export default function Modal({ files, closeModal }: ModalProps) {
       />
       <button
         type="button"
-        className="absolute top-2 right-2 text-gray-500 cursor-pointer"
+        className="absolute top-[-9px] right-2 text-gray-500 cursor-pointer"
         onClick={closeModal}
       >
-        <Image src={closeIcon} alt="Close icon" width={20} height={20} />
+        <Image src={closeIcon} alt="Close icon" width={18} height={18} />
       </button>
+      <div className="grid-container bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
+        <p className="grid-col-stretch">Document Name</p>
+        <p>Date</p>
+        <p>Type</p>
+        <p>Status</p>
+      </div>
       {filteredFiles.map((file) => (
-        <div key={file.name}>
+        <div key={file.name} className="grid-container">
           <DocumentInfo type={file.type} name={file.name} added={file.added} />
         </div>
       ))}

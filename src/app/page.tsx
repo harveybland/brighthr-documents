@@ -63,15 +63,15 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-white px-4">
+    <div className="bg-white px-4 space-y-4 pb-5 shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] rounded-md">
       <h1 className="relative text-2xl rounded-t py-5">Documents</h1>
       <OptionBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         sortDocuments={sortDocuments}
       />
-      <p className="py-4">{filteredDocuments.length} documents</p>
-      <div className="pb-4 rounded rounded-tl-none">
+      <p>{filteredDocuments.length} documents</p>
+      <div className="rounded rounded-tl-none">
         <div className="flex flex-col gap-4">
           <div className="grid-container bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
             <p className="grid-col-stretch">Document Name</p>
