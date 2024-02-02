@@ -2,11 +2,11 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Document from "../Document";
-import { File } from "../../../../types/types";
+import { DocumentItem } from "../../../../types/types";
 
 describe("Document Component", () => {
   // Mock file data
-  const mockFile: File = {
+  const mockFile: DocumentItem = {
     type: "pdf",
     name: "Employee Handbook",
     added: "2017-01-06",

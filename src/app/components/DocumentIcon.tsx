@@ -2,9 +2,9 @@ import Image from "next/image";
 import folderIcon from "../../../public/folder-icon.png";
 import pdfIcon from "../../../public/pdf-icon.png";
 import csvIcon from "../../../public/csv-icon.png";
-import { Type } from "../../../types/types";
+import { DocumentType } from "../../../types/types";
 
-export default function DocumentIcon({ type }: Type) {
+export default function DocumentIcon({ type }: DocumentType) {
   return (
     <div>
       {type === "pdf" ? (

@@ -1,17 +1,16 @@
-export interface File {
-    type: string;
+export interface DocumentItem {
+    type: "pdf" | "folder" | "csv" | "doc" | "mov";
     name: string;
+    added?: string;
+    files?: DocumentItem[];
+}
+
+export interface File {
+    name: string;
+    type: string;
     added: string;
 }
 
-export interface Folder {
-    type: "folder";
-    name: string;
-    files: File[];
-}
-
-export type Item = File | Folder;
-
-export interface Type {
+export interface DocumentType {
     type: string
 }

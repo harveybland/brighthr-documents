@@ -1,18 +1,19 @@
-import { File } from "../../types/types";
+import { DocumentItem } from "../../types/types";
 import { jsonData } from "./api/json";
 import Document from "./components/Document";
 
 export default async function Home() {
   // Fetch json data from api/json.ts
-  const documents: File[] = await jsonData();
+  // This is a temporary solution to fetch data from a local file
+  const documents: DocumentItem[] = await jsonData();
 
   return (
     <div className="bg-white px-4 ">
       <h1 className="relative text-2xl rounded-t py-5">Documents</h1>
       <p className="pb-3">{documents.length} documents</p>
       <div className="pb-4 rounded rounded-tl-none">
-        <div className="grid-style bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
-          <p>Document Name</p>
+        <div className="grid-container bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
+          <p className="grid-col-stretch">Document Name</p>
           <p>Date</p>
           <p>Type</p>
           <p>Status</p>

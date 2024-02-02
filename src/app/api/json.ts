@@ -1,6 +1,6 @@
-import { Item } from "../../../types/types";
+import { DocumentItem } from "../../../types/types";
 
-export const jsonData = async (): Promise<any> => {
+export const jsonData = async (): Promise<DocumentItem[]> => {
     return [
         {     
             "type": "pdf",     

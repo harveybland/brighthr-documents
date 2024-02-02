@@ -25,7 +25,10 @@ body {
 }
 
 /* grid */
-.grid-style {
-  @apply grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,1fr,1fr,100px] gap-2;
+.grid-container {
+  @apply grid grid-cols-[1fr,1fr,100px] md:grid-cols-[1fr,1fr,1fr,100px] gap-2;
 }
 
+.grid-col-stretch {
+  @apply col-span-4 md:col-span-1;
+}
