@@ -23,7 +23,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-white px-4 ">
+    <div className="bg-white px-4">
       <h1 className="relative text-2xl rounded-t py-5">Documents</h1>
       <p className="pb-3">{documents.length} documents</p>
       <div className="pb-4 rounded rounded-tl-none">

@@ -17,3 +17,9 @@ export interface File {
 export interface DocumentType {
     type: string
 }
+
+// Modal props interface
+export interface ModalProps {
+    closeModal: () => void;
+    files: File[];
+}
