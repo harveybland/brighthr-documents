@@ -28,3 +28,4 @@
 
 - It would have been beneficial to create separate branches for each feature added.
 - Considered using queryParams to show the modal on the server side
+- Refactor the sort function to be reusable in components.

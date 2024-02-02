@@ -20,11 +20,7 @@ body {
   @apply col-span-4 md:col-span-1;
 }
 
-/* modal */
-/* .modal-container {
-  @apply absolute left-1/2 transform -translate-x-1/2 w-[500px] bg-white border rounded p-8;
-} */
-
+/* modal  */
 .modal-container {
   position: absolute;
   top: 50%;

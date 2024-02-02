@@ -63,8 +63,8 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-white px-4 space-y-4 pb-5 shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] rounded-md">
-      <h1 className="relative text-2xl rounded-t py-5">Documents</h1>
+    <div className="bg-white px-5 space-y-4 pb-5 shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] rounded-md">
+      <h1 className="relative text-2xl rounded-t pt-5">Documents</h1>
       <OptionBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
