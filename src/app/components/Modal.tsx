@@ -23,11 +23,34 @@ export default function Modal({ files, closeModal }: ModalProps) {
     setFilteredFiles(filtered);
   }, [searchTerm, files]);
 
+  // Sort documents
+  const sortDocuments = (sortBy: string) => {
+    const sorted = [...filteredFiles];
+
+    switch (sortBy) {
+      case "date":
+        sorted.sort((a: any, b: any) => {
+          const dateA = new Date(a.added);
+          const dateB = new Date(b.added);
+          return dateA - dateB;
+        });
+        break;
+      case "type":
+        sorted.sort((a, b) => a.type.localeCompare(b.type));
+        break;
+      default:
+        break;
+    }
+    setFilteredFiles(sorted);
+  };
+
   return (
-    <div
-      className={`absolute flex flex-col items-center justify-center left-1/2 transform -translate-x-1/2 w-[500px] h-[300px] bg-white border rounded py-4 px-4`}
-    >
-      <OptionBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+    <div className="modal-container">
+      <OptionBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        sortDocuments={sortDocuments}
+      />
       <button
         type="button"
         className="absolute top-2 right-2 text-gray-500 cursor-pointer"

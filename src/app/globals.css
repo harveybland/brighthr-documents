@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
 body {
   margin: 0;
   padding: 0;
@@ -26,10 +12,15 @@ body {
 
 /* grid */
 .grid-container {
-  @apply grid grid-cols-[1fr,1fr,100px] md:grid-cols-[1fr,1fr,1fr,70px] gap-2 items-center;
+  @apply grid grid-cols-[1fr,1fr,70px] md:grid-cols-[1fr,1fr,1fr,70px] gap-2 items-center;
 }
 
 /* desktop grid */
 .grid-col-stretch {
   @apply col-span-4 md:col-span-1;
+}
+
+/* modal */
+.modal-container {
+  @apply absolute flex flex-col items-center justify-center left-1/2 transform -translate-x-1/2 w-[500px] h-[300px] bg-white border rounded py-4 px-4;
 }

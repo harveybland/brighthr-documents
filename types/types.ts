@@ -24,7 +24,9 @@ export interface ModalProps {
     closeModal?: () => void;
 }
 
+// Option bar props interface
 export interface OptionBarProps {
     searchTerm: string;
     setSearchTerm: (option: string) => void;
+    sortDocuments: (option: string) => void;
 }

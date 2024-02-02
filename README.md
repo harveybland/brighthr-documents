@@ -25,3 +25,6 @@
 - To test the components: pnpm run test
 
 ## Improvements / Added Notes
+
+- It would have been beneficial to create separate branches for each feature added.
+- Considered using queryParams to show the modal on the server side

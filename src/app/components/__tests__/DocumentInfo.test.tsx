@@ -4,6 +4,7 @@ import "@testing-library/jest-dom";
 import DocumentInfo from "../DocumentInfo";
 
 describe("DocumentInfo Component", () => {
+  // Mock file details
   const mockFile = {
     type: "pdf",
     name: "Sample Document",
