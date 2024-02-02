@@ -23,6 +23,7 @@ describe("Modal Component", () => {
     render(<Modal files={mockFiles} />);
 
     mockFiles.forEach((file) => {
+      // Check if the file details are rendered
       expect(screen.getByText(file.name)).toBeInTheDocument();
       expect(screen.getByText(file.type)).toBeInTheDocument();
       expect(screen.getByText(file.added)).toBeInTheDocument();

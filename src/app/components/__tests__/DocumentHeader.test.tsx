@@ -11,7 +11,7 @@ describe("DocumentHeader Component", () => {
 
     render(<DocumentHeader modalHeader={mockModalHeader} />);
 
-    // Check if the column headers are rendered
+    // Check if the header details are rendered
     expect(screen.getByText("Document Name")).toBeInTheDocument();
     expect(screen.getByText("Date")).toBeInTheDocument();
     expect(screen.getByText("Type")).toBeInTheDocument();
