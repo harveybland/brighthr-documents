@@ -15,6 +15,11 @@ body {
   @apply grid grid-cols-[1fr,1fr,70px] md:grid-cols-[1fr,1fr,1fr,70px] gap-2 items-center border border-borderMain;
 }
 
+/* modal grid */
+.grid-container-modal {
+  @apply grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,1fr,1fr] gap-2 items-center border border-borderMain;
+}
+
 /* desktop grid */
 .grid-col-stretch {
   @apply col-span-4 md:col-span-1;
@@ -33,4 +38,40 @@ body {
   border-radius: 6px;
   width: 100%;
   max-width: 600px;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+/* modal animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* document component animation */
+.animate-pop-in > * {
+  transform-origin: center;
+  opacity: 0;
+}
+
+@keyframes pop-in {
+  0% {
+      transform: scaleX(1.2);
+      opacity: 0;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.animate-pop-in > * {
+  animation: 0.4s ease-out 0.05s 1 pop-in;
+  animation-fill-mode: forwards;
 }

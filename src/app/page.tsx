@@ -73,22 +73,24 @@ export default function Home() {
       <p>{filteredDocuments.length} documents</p>
       <div className="rounded rounded-tl-none">
         <div className="flex flex-col gap-4">
-          <div className="grid-container bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
+          <div className="grid-container border-none bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
             <p className="grid-col-stretch">Document Name</p>
             <p>Date</p>
             <p>Type</p>
             <p>Action</p>
           </div>
-          {filteredDocuments.map((document) => (
-            <div key={document.name}>
-              <Document
-                type={document.type}
-                name={document.name}
-                added={document.added}
-                files={document.files}
-              />
-            </div>
-          ))}
+          <div className="space-y-4 animate-pop-in">
+            {filteredDocuments.map((document) => (
+              <div key={document.name}>
+                <Document
+                  type={document.type}
+                  name={document.name}
+                  added={document.added}
+                  files={document.files}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
