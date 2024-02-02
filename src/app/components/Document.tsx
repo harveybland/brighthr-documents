@@ -22,7 +22,11 @@ export default function Document({ type, name, added, files }: DocumentItem) {
     <>
       <button
         type="button"
+<<<<<<< HEAD
         className={`grid-container border border-borderMain text-start w-full rounded py-4 px-4 ${
+=======
+        className={`grid-container text-start w-full rounded py-4 px-4 ${
+>>>>>>> feat/modal
           type !== "folder" && "cursor-default"
         } `}
         onClick={handleFolderClick}

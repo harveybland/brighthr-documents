@@ -12,13 +12,14 @@ body {
 
 /* grid */
 .grid-container {
-  @apply grid grid-cols-[1fr,1fr,70px] md:grid-cols-[1fr,1fr,1fr,70px] gap-2 items-center;
+  @apply grid grid-cols-[1fr,1fr,70px] md:grid-cols-[1fr,1fr,1fr,70px] gap-2 items-center border border-borderMain;
 }
 
 /* desktop grid */
 .grid-col-stretch {
   @apply col-span-4 md:col-span-1;
 }
+
 
 /* modal  */
 .modal-container {

@@ -64,7 +64,7 @@ export default function Modal({ files, closeModal }: ModalProps) {
         <p>Type</p>
       </div>
       {filteredFiles.map((file) => (
-        <div key={file.name} className="grid-container">
+        <div key={file.name} className="grid-container px-4 py-4 rounded">
           <DocumentInfo type={file.type} name={file.name} added={file.added} />
         </div>
       ))}
