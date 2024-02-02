@@ -5,6 +5,7 @@ import OptionBar from "./components/OptionBar";
 import { DocumentItem } from "../../types/types";
 import { jsonData } from "./api/json";
 import Document from "./components/Document";
+import DocumentHeader from "./components/DocumentHeader";
 
 export default function Home() {
   const [documents, setDocuments] = useState<DocumentItem[]>([]);
@@ -73,12 +74,7 @@ export default function Home() {
       <p>{filteredDocuments.length} documents</p>
       <div className="rounded rounded-tl-none">
         <div className="flex flex-col gap-4">
-          <div className="grid-container border-none bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
-            <p className="grid-col-stretch">Document Name</p>
-            <p>Date</p>
-            <p>Type</p>
-            <p>Action</p>
-          </div>
+          <DocumentHeader modalHeader={false} />
           <div className="space-y-4 animate-pop-in">
             {filteredDocuments.map((document) => (
               <div key={document.name}>

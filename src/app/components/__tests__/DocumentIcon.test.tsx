@@ -13,6 +13,6 @@ describe("Document Component", () => {
   it("renders Document component with file details", () => {
     render(<DocumentIcon type={mockType.type} />);
 
-    expect(screen.getByAltText("PDF svg")).toBeInTheDocument();
+    expect(screen.getByAltText("PDF icon")).toBeInTheDocument();
   });
 });

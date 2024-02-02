@@ -30,3 +30,8 @@ export interface OptionBarProps {
     setSearchTerm: (option: string) => void;
     sortDocuments: (option: string) => void;
 }
+
+// Modal header props interface
+export interface ModalHeaderProps {
+    modalHeader: boolean;
+}

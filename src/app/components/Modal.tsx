@@ -6,6 +6,7 @@ import DocumentInfo from "./DocumentInfo";
 import closeIcon from "../../../public/close-icon.svg";
 import { useEffect, useState } from "react";
 import OptionBar from "./OptionBar";
+import DocumentHeader from "./DocumentHeader";
 
 export default function Modal({ files, closeModal }: ModalProps) {
   const [filteredFiles, setFilteredFiles] = useState<File[]>([]);
@@ -58,11 +59,7 @@ export default function Modal({ files, closeModal }: ModalProps) {
       >
         <Image src={closeIcon} alt="Close icon" width={18} height={18} />
       </button>
-      <div className="grid-container-modal border-none bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
-        <p className="grid-col-stretch">Document Name</p>
-        <p>Date</p>
-        <p>Type</p>
-      </div>
+      <DocumentHeader modalHeader />
       {filteredFiles.map((file) => (
         <div key={file.name} className="grid-container-modal px-4 py-4 rounded">
           <DocumentInfo type={file.type} name={file.name} added={file.added} />
