@@ -77,7 +77,7 @@ export default function Home() {
             <p className="grid-col-stretch">Document Name</p>
             <p>Date</p>
             <p>Type</p>
-            <p>Status</p>
+            <p>Action</p>
           </div>
           {filteredDocuments.map((document) => (
             <div key={document.name}>

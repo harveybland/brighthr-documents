@@ -58,12 +58,6 @@ export default function Modal({ files, closeModal }: ModalProps) {
       >
         <Image src={closeIcon} alt="Close icon" width={18} height={18} />
       </button>
-      <div className="grid-container bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm">
-        <p className="grid-col-stretch">Document Name</p>
-        <p>Date</p>
-        <p>Type</p>
-        <p>Status</p>
-      </div>
       {filteredFiles.map((file) => (
         <div key={file.name} className="grid-container py-4 px-4">
           <DocumentInfo type={file.type} name={file.name} added={file.added} />
