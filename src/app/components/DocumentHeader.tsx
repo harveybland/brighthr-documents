@@ -6,7 +6,7 @@ export default function DocumentHeader({ modalHeader }: ModalHeaderProps) {
       <div
         className={`${
           modalHeader ? "grid-container-modal" : "grid-container"
-        } border-none bg-backgroundMain px-4 rounded-t py-4 text-textMain text-sm`}
+        } border-none bg-backgroundMain px-4 rounded py-4 text-textMain text-sm sticky top-0`}
       >
         <p className="grid-col-stretch">Document Name</p>
         <p>Date</p>
