@@ -1,11 +1,26 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { DocumentItem } from "../../types/types";
 import { jsonData } from "./api/json";
 import Document from "./components/Document";
 
-export default async function Home() {
-  // Fetch json data from api/json.ts
-  // This is a temporary solution to fetch data from a local file
-  const documents: DocumentItem[] = await jsonData();
+export default function Home() {
+  const [documents, setDocuments] = useState<DocumentItem[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch json data from api/json.ts
+        // This is a temporary solution to fetch data from a local file
+        const documents: DocumentItem[] = await jsonData();
+        setDocuments(documents);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="bg-white px-4 ">
@@ -25,6 +40,7 @@ export default async function Home() {
                 type={document.type}
                 name={document.name}
                 added={document.added}
+                files={document.files}
               />
             </div>
           ))}
