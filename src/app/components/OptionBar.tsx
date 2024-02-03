@@ -1,15 +1,19 @@
 import Image from "next/image";
 import { OptionBarProps } from "../../../types/types";
 import searchIcon from "../../../public/search-icon.svg";
+import { useState } from "react";
 
 export default function OptionBar({
   searchTerm,
   setSearchTerm,
   sortDocuments,
 }: OptionBarProps) {
+  const [activeSort, setActiveSort] = useState("");
+
   // Sort documents
   const handleSort = (sortBy: string) => {
     sortDocuments(sortBy);
+    setActiveSort(sortBy);
   };
 
   return (
@@ -28,14 +32,18 @@ export default function OptionBar({
         Sort By:{" "}
         <button
           type="button"
-          className="bg-backgroundMain rounded-md px-3 py-2 text-textMain text-sm"
+          className={`bg-backgroundMain rounded-md px-3 py-2 text-textMain text-sm ${
+            activeSort === "date" && "active-sort"
+          }`}
           onClick={() => handleSort("date")}
         >
           Date
         </button>
         <button
           type="button"
-          className="bg-backgroundMain rounded-md px-3 py-2 text-textMain text-sm"
+          className={`bg-backgroundMain rounded-md px-3 py-2 text-textMain text-sm ${
+            activeSort === "type" && "active-sort"
+          }`}
           onClick={() => handleSort("type")}
         >
           Type

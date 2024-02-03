@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { File, ModalProps } from "../../../types/types";
 import DocumentInfo from "./DocumentInfo";
@@ -7,6 +5,7 @@ import closeIcon from "../../../public/close-icon.svg";
 import { useEffect, useState } from "react";
 import OptionBar from "./OptionBar";
 import DocumentHeader from "./DocumentHeader";
+import sortDocuments from "../../../utils/sortFunction";
 
 export default function Modal({ files, closeModal }: ModalProps) {
   const [filteredFiles, setFilteredFiles] = useState<File[]>([]);
@@ -21,36 +20,21 @@ export default function Modal({ files, closeModal }: ModalProps) {
       return nameMatches;
     });
 
+    // Sort documents
+    sortDocuments("date", filtered, setFilteredFiles);
+
+    // Update filteredFiles state
     setFilteredFiles(filtered);
   }, [searchTerm, files]);
-
-  // Sort documents
-  const sortDocuments = (sortBy: string) => {
-    const sorted = [...filteredFiles];
-
-    switch (sortBy) {
-      case "date":
-        sorted.sort((a: File, b: File) => {
-          const dateA = a.added ? new Date(a.added) : null;
-          const dateB = b.added ? new Date(b.added) : null;
-          return (dateA?.getTime() || 0) - (dateB?.getTime() || 0);
-        });
-        break;
-      case "type":
-        sorted.sort((a, b) => a.type.localeCompare(b.type));
-        break;
-      default:
-        break;
-    }
-    setFilteredFiles(sorted);
-  };
 
   return (
     <div className="modal-container shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] space-y-4">
       <OptionBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-        sortDocuments={sortDocuments}
+        sortDocuments={(sortBy) =>
+          sortDocuments(sortBy, filteredFiles, setFilteredFiles)
+        }
       />
       <button
         type="button"
