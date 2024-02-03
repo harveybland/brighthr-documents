@@ -6,6 +6,7 @@ import { DocumentItem } from "../../types/types";
 import { jsonData } from "./api/json";
 import Document from "./components/Document";
 import DocumentHeader from "./components/DocumentHeader";
+import sortDocuments from "../../utils/sortFunction";
 
 export default function Home() {
   const [documents, setDocuments] = useState<DocumentItem[]>([]);
@@ -37,31 +38,12 @@ export default function Home() {
       return nameMatches;
     });
 
+    // Sort documents
+    sortDocuments("date", filtered, setFilteredDocuments);
+
     // Set filtered documents
     setFilteredDocuments(filtered);
   }, [searchTerm, documents]);
-
-  // Sort documents
-  const sortDocuments = (sortBy: string) => {
-    const sorted = [...filteredDocuments];
-
-    switch (sortBy) {
-      case "date":
-        sorted.sort((a: DocumentItem, b: DocumentItem) => {
-          const dateA = a.added ? new Date(a.added) : null;
-          const dateB = b.added ? new Date(b.added) : null;
-          return (dateA?.getTime() || 0) - (dateB?.getTime() || 0);
-        });
-        break;
-      case "type":
-        sorted.sort((a, b) => a.type.localeCompare(b.type));
-        break;
-      default:
-        break;
-    }
-
-    setFilteredDocuments(sorted);
-  };
 
   return (
     <div className=" bg-white px-5 space-y-4 pb-5 shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] rounded-md">
@@ -69,7 +51,9 @@ export default function Home() {
       <OptionBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-        sortDocuments={sortDocuments}
+        sortDocuments={(sortBy) =>
+          sortDocuments(sortBy, filteredDocuments, setFilteredDocuments)
+        }
       />
       <p>{filteredDocuments.length} documents</p>
       <div className="rounded rounded-tl-none">
