@@ -10,19 +10,24 @@ body {
   color: #1e1e1e;
 }
 
-/* grid */
+/* Grid */
 .grid-container {
   @apply grid grid-cols-[1fr,1fr,70px] md:grid-cols-[1fr,1fr,1fr,70px] gap-2 items-center border border-borderMain;
 }
 
-/* modal grid */
+/* Modal grid */
 .grid-container-modal {
   @apply grid grid-cols-[1fr,1fr] md:grid-cols-[1fr,1fr,1fr] gap-2 items-center border border-borderMain;
 }
 
-/* desktop grid */
+/* Desktop grid */
 .grid-col-stretch {
   @apply col-span-4 md:col-span-1;
+}
+
+/* Sort buttons active */
+.active-sort {
+  @apply bg-[#ccecff] text-[#0157ad];
 }
 
 /* modal  */
@@ -39,7 +44,7 @@ body {
   animation: fadeUp 0.3s ease-in-out forwards;
 }
 
-/* modal animation */
+/* Modal animation */
 @keyframes fadeUp {
   from {
     opacity: 0;
